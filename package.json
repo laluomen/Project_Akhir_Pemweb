@@ -1,0 +1,16 @@
+{
+  "name": "project_akhir_pemweb",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build-css": "sass Src/Asset/Scss/Style.scss dist/assets/css/Style.css",
+    "watch-css": "sass --watch Src/Asset/Scss/Style.scss:dist/assets/css/Style.css"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.94.2"
+  }
+}
