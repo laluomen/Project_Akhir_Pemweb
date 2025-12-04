@@ -1,0 +1,44 @@
+/* HERO SECTION */
+.hero {
+  padding: 4.5rem 0;
+
+  .muted {
+    color: rgba(231, 233, 238, 0.65);
+  }
+}
+
+/* CARD WRAPPER */
+.hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+}
+
+/* CAROUSEL IMAGE */
+.hero-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .hero-img {
+    height: 460px;
+  }
+}
+
+/* REMOVE DEFAULT BOOTSTRAP CAROUSEL BACKGROUND */
+.carousel-item {
+  background: transparent !important;
+}
+
+/* OPTIONAL: SMOOTH FADE TRANSITION FIX */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity .9s ease-in-out;
+}
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
