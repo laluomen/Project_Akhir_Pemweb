@@ -1,7 +1,25 @@
+// main.scss
+
+// 1. Import Variables & Mixins DULUAN
 @import "utils/variables";
+@import "abstracts/mixins";
 
-@import "vendors/bootstrap.scss";
+// 2. Import Bootstrap (Pastikan path-nya benar ke node_modules kamu)
+// Contoh jika pakai npm: @import "../node_modules/bootstrap/scss/bootstrap";
+// Atau jika file bootstrap.scss ada di folder vendors:
+@import "vendors/bootstrap"; 
 
-@import "components/_navbar.scss";
-@import "components/_nav-logo.scss";
-@import "components/_hero.scss";
+// 3. Import Base
+@import "base/reset";
+@import "base/typography";
+
+// 4. Import Components
+@import "components/navbar";
+@import "components/hero";
+@import "components/buttons";
+@import "components/cards";
+@import "components/forms";
+
+// 5. Import Layout
+@import "layout/footer";
+@import "layout/_theme";

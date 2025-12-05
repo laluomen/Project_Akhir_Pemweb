@@ -1,12 +1,31 @@
-.navbar {
-  background-color: #18181E !important;
+// components/_navbar.scss
 
-  .nav-link,
-  .navbar-brand {
-    color: #FF6A3D !important;
+.navbar {
+  // Warna background gelap transparan (Sesuai kode HTML kamu)
+  background: rgba(5, 5, 7, 0.8) !important;
+  
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid $glass-border;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .nav-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 8px;
   }
 
-  .nav-link:hover {
-    color: #FF8F58 !important;
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: rgba($light, 0.8); // Warna default link
+
+    &:hover,
+    &.active {
+      color: $secondary !important; // Warna cyan saat hover
+    }
   }
 }

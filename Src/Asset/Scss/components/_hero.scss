@@ -1,44 +1,20 @@
-/* HERO SECTION */
+// components/_hero.scss
+
 .hero {
-  padding: 4.5rem 0;
-
-  .muted {
-    color: rgba(231, 233, 238, 0.65);
+  padding: 4rem 0;
+  position: relative;
+  
+  h1 span {
+    background: linear-gradient(45deg, $primary, $secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-}
 
-/* CARD WRAPPER */
-.hero-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
-}
-
-/* CAROUSEL IMAGE */
-.hero-img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  display: block;
-}
-
-@media (min-width: 992px) {
   .hero-img {
-    height: 460px;
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   }
-}
-
-/* REMOVE DEFAULT BOOTSTRAP CAROUSEL BACKGROUND */
-.carousel-item {
-  background: transparent !important;
-}
-
-/* OPTIONAL: SMOOTH FADE TRANSITION FIX */
-.carousel-fade .carousel-item {
-  opacity: 0;
-  transition: opacity .9s ease-in-out;
-}
-.carousel-fade .carousel-item.active {
-  opacity: 1;
 }

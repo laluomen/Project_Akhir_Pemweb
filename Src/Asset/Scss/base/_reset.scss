@@ -1,0 +1,20 @@
+// base/_reset.scss
+
+body {
+  background-color: $body-bg;
+  
+  // COPY PERSIS DARI KODE HTML KAMU:
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(111, 66, 193, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(13, 202, 240, 0.15), transparent 25%);
+    
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+// Helper class text muted
+.text-muted-custom, .muted {
+  color: rgba($light, 0.7) !important;
+  font-weight: 300;
+}

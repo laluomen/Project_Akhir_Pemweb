@@ -1,0 +1,20 @@
+// layout/_footer.scss
+
+.site-footer {
+  margin-top: auto; // Agar footer selalu terdorong ke bawah
+  padding: 4rem 0 2rem;
+  // background-color & border handled by _theme.scss (.site-footer extends .panel-surface)
+  font-size: 0.9rem;
+
+  // Icon sosmed di footer
+  i {
+    transition: transform 0.2s, color 0.2s;
+    
+    &:hover {
+      transform: scale(1.2);
+      color: $primary !important;
+    }
+  }
+
+  // p color handled by _theme.scss
+}
