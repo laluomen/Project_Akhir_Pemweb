@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hubungi Kami — Sestro Studio</title>
+
+    <script src="../dist/assets/js/anti-flicker.js"></script>
+    <link rel="icon" type="image/x-icon" href="./Asset/Image/logo.ico" />
     <!-- CSS & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +32,7 @@
             <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Layanan</a></li>
+            <li class="nav-item"><a class="nav-link" href="Project.html">Proyek</a></li>
             <li class="nav-item"><a class="nav-link active" href="contact.html">Kontak</a></li>
           </ul>
           
@@ -42,10 +46,10 @@
       </div>
     </nav>
 
-    <header class="py-5 text-center">
+    <header class="py-5 text-center hero">
       <div class="container">
         <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill shadow-sm">Get in Touch</span>
-        <h1 class="display-3 fw-bold text-white">
+        <h1 class="display-3 fw-bold hero-title">
           Hubungi <span class="text-gradient">Kami</span>
         </h1>
         <p class="text-muted-custom lead">Kami siap mendengar ide hebat Anda.</p>
@@ -65,11 +69,7 @@
                 <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
                 <div>
                   <h5 class="text-white mb-1">Alamat</h5>
-<<<<<<< HEAD
                   <p class="text-muted-custom small">Indaraya Indah Jalan Nomor 29 Simpang Lurus</p>
-=======
-                  <p class="text-muted-custom small">Jl. Kreatif No. 123, Tech Valley<br>Jakarta Selatan, Indonesia</p>
->>>>>>> b952138cf00f86ea0c13b70d93927e1dbc3ef52c
                 </div>
               </div>
 
@@ -85,11 +85,7 @@
                 <i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>
                 <div>
                   <h5 class="text-white mb-1">Telepon</h5>
-<<<<<<< HEAD
                   <p class="text-muted-custom small">+62 812 2907 0909</p>
-=======
-                  <p class="text-muted-custom small">+62 812 3456 7890</p>
->>>>>>> b952138cf00f86ea0c13b70d93927e1dbc3ef52c
                 </div>
               </div>
 
@@ -98,9 +94,7 @@
 
           <!-- Contact Form -->
           <div class="col-lg-7">
-            <form class="about-box">
-              <h3 class="text-white mb-4">Kirim Pesan</h3>
-              
+            <form class="about-box">  
               <div class="mb-3">
                 <label for="name" class="form-label text-white small">Nama Lengkap</label>
                 <input type="text" class="form-control glass-input" id="name" placeholder="Nama Anda">
@@ -147,14 +141,50 @@
     <!-- Theme toggle script (external file) -->
     <script src="/dist/assets/js/theme-toggle.js" defer></script>
 
-    <!-- Init ThemeToggle -->
+    <!-- Init ThemeToggle + Form Validation -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        // inisialisasi theme toggle (tetap sama)
         window.ThemeToggle && window.ThemeToggle.init({
           toggleSelector: '#themeToggle',
           iconSelector: '#themeIcon',
           storageKey: 'theme',
           preferBody: true
+        });
+
+        // --- FORM VALIDATION (DITAMBAHKAN) ---
+        var form     = document.querySelector('form');
+        var nameEl   = document.getElementById('name');
+        var emailEl  = document.getElementById('email');
+        var subjectEl= document.getElementById('subject');
+        var messageEl= document.getElementById('message');
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // ambil nilai TERKINI
+          var name    = nameEl.value.trim();
+          var email   = emailEl.value.trim();
+          var subject = subjectEl.value.trim();
+          var message = messageEl.value.trim();
+
+          // cek field wajib
+          if (name === "" || email === "" || subject === "" || message === "") {
+            alert("Harap Lengkapi Data");
+            return;
+          }
+
+          // validasi email sederhana
+          if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
+            alert("Email Tidak Valid");
+            return;
+          }
+
+          // kalau semua lolos
+          alert("Pesan Berhasil Dikirim");
+
+          // optional: reset form setelah submit
+          // form.reset();
         });
       });
     </script>

@@ -11901,13 +11901,14 @@ a:hover {
 }
 
 .navbar {
-  background: rgba(5, 5, 7, 0.8) !important;
+  background-color: var(--nav-bg, rgba(5, 5, 7, 0.8)) !important;
+  border-bottom: 1px solid var(--nav-border, rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 .navbar .nav-logo {
   width: 36px;
@@ -11917,64 +11918,59 @@ a:hover {
 }
 .navbar .nav-link {
   font-weight: 500;
-  transition: color 0.3s ease;
-  color: rgba(231, 233, 238, 0.8);
+  color: var(--nav-text, rgba(231, 233, 238, 0.8)) !important;
+  transition: color 160ms ease, background-color 160ms ease;
 }
-.navbar .nav-link:hover, .navbar .nav-link.active {
-  color: #0dcaf0 !important;
+.navbar .nav-link:hover {
+  color: var(--nav-link-hover, #0dcaf0) !important;
+}
+.navbar .nav-link.active {
+  font-weight: 600;
+  color: var(--color-primary) !important;
 }
 
 .hero {
-  padding: 4rem 0;
-  position: relative;
-}
-.hero h1 span, .hero .h1 span {
-  background: linear-gradient(45deg, #6f42c1, #0dcaf0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero .hero-img {
-  height: 400px;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 1rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  background-image: radial-gradient(600px 300px at 10% 10%, rgba(111, 66, 193, 0.02), transparent 15%), radial-gradient(500px 220px at 90% 80%, rgba(13, 202, 240, 0.01), transparent 12%);
+  background-repeat: no-repeat;
 }
 
-.btn {
-  border-radius: 50px;
-  padding: 0.6rem 1.5rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
+.hero .badge {
+  background: var(--glass-bg);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
 }
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-1px);
+
+.hero h1, .hero .h1, .hero h1 span, .hero .h1 span {
+  color: var(--text) !important;
 }
 
 .btn-primary {
-  background-color: #6f42c1;
-  border-color: #6f42c1;
-}
-.btn-primary:hover {
-  background-color: rgb(125.6294820717, 85.2011952191, 199.2988047809);
-  border-color: rgb(125.6294820717, 85.2011952191, 199.2988047809);
-  box-shadow: 0 10px 25px rgba(111, 66, 193, 0.4);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff !important;
 }
 
-.btn-outline-light {
-  border-width: 2px;
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: 0.35rem 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 180ms ease;
+  border-radius: 0.5rem;
 }
-.btn-outline-light:hover {
-  background-color: #fff;
-  color: #050507;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+
+.btn-ghost i {
+  font-size: 1rem;
+  line-height: 1;
+  color: inherit;
+}
+
+.btn-ghost:focus {
+  outline: 3px solid rgba(99, 102, 241, 0.12);
+  outline-offset: 2px;
 }
 
 .game-card {
@@ -12045,75 +12041,6 @@ body.light .glass-input::placeholder {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.site-footer {
-  margin-top: auto;
-  padding: 4rem 0 2rem;
-  font-size: 0.9rem;
-}
-.site-footer i {
-  transition: transform 0.2s, color 0.2s;
-}
-.site-footer i:hover {
-  transform: scale(1.2);
-  color: #6f42c1 !important;
-}
-
-/* ---------- Default Root (Variable CSS) ---------- */
-:root {
-  --color-primary: #6f42c1;
-  --color-secondary: #0dcaf0;
-  --color-info: #0dcaf0;
-  --color-light: #e7e9ee;
-  --color-dark: #050507;
-  /* Variabel Semantik (Default Dark) */
-  --bg: #050507;
-  --text: #e7e9ee;
-  --muted: rgba(255,255,255,0.65);
-  --surface: rgba(0,0,0,0.12);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --shadow-soft: 0 6px 24px rgba(2,6,23,0.06);
-  --bg-image: none;
-}
-
-/* ---------- Light Mode (Tampilan Kaca) ---------- */
-body.light {
-  /* Menggunakan variabel light-theme dari SASS */
-  --bg: #f7f8fb;
-  --text: #0f1724;
-  --muted: rgba(15, 23, 36, 0.62);
-  /* Surface & Glass */
-  --surface: rgba(255, 255, 255, 0.92);
-  --glass-bg: rgba(255, 255, 255, 0.78);
-  --glass-border: rgba(15, 23, 42, 0.06);
-  --shadow-soft: 0 12px 36px rgba(10,18,34,0.08);
-  /* Background Layer */
-  --bg-image:
-    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,251,253,1) 28%, rgba(244,246,249,1) 100%),
-    radial-gradient(700px 320px at 12% 18%, rgba(111,66,193,0.035), transparent 24%),
-    radial-gradient(520px 260px at 88% 82%, rgba(13,202,240,0.018), transparent 20%);
-  --card-elevation: 0 8px 28px rgba(10, 18, 34, 0.06);
-  /* Navbar Light */
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --nav-text: #0b1a28;
-  --nav-link: #0f1724;
-  --nav-link-hover: #ff7a59;
-  --nav-border: rgba(15, 23, 42, 0.06);
-}
-
-/* ---------- Dark Mode Overrides ---------- */
-body.dark {
-  --bg: #0b1220;
-  --text: #e7e9ee;
-  --muted: rgba(231,233,238,0.75);
-  --surface: rgba(255,255,255,0.02);
-  --glass-bg: rgba(255,255,255,0.04);
-  --glass-border: rgba(255,255,255,0.08);
-  --shadow-soft: 0 6px 30px rgba(2,6,23,0.6);
-  --bg-image: none;
-}
-
-/* ---------- Global Styles ---------- */
 html, body {
   background-color: var(--bg);
   background-image: var(--bg-image);
@@ -12124,40 +12051,6 @@ html, body {
   transition: background-color 220ms ease, color 220ms ease;
 }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  background-color: var(--nav-bg, transparent) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
-  transition: background-color 180ms ease, border-color 180ms ease;
-}
-
-.navbar .nav-link {
-  color: var(--nav-text, var(--text)) !important;
-  transition: color 160ms ease, background-color 160ms ease;
-}
-
-.navbar .nav-link:hover {
-  color: var(--nav-link-hover, var(--color-primary)) !important;
-}
-
-.navbar .navbar-brand {
-  color: var(--nav-brand, var(--color-primary)) !important;
-}
-
-.navbar .navbar-toggler {
-  border-color: var(--nav-border, transparent) !important;
-}
-
-.navbar .navbar-toggler-icon {
-  filter: none;
-}
-
-.navbar .nav-link.active {
-  font-weight: 600;
-  color: var(--color-primary) !important;
-}
-
-/* Logo Tint (Fallback) */
 .nav-logo.tint {
   filter: brightness(0) invert(1) saturate(0) contrast(120%);
   transition: filter 200ms ease;
@@ -12167,168 +12060,13 @@ body.light .nav-logo.tint {
   filter: none;
 }
 
-/* ---------- Panel & Cards (Glassmorphism) ---------- */
-/* Base Style untuk Panel */
-.panel-surface, .about-box, .site-footer, .card, .header-panel {
-  background-color: var(--surface);
-  border: 1px solid var(--glass-border);
-  color: var(--text);
-  backdrop-filter: blur(6px) saturate(110%);
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  border-radius: 12px;
-  padding: 1.25rem;
-  transition: box-shadow 200ms ease, transform 200ms ease, color 160ms ease;
-}
-
-/* Terapkan ke elemen */
-/* Hover Effect pada Panel */
-.about-box:hover,
-.site-footer:hover,
-.card:hover,
-.header-panel:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
-}
-
-/* Pastikan teks dalam panel terbaca */
-.about-box *,
-.site-footer *,
-.card * {
-  color: var(--text) !important;
-}
-
-/* Dark Mode Panel */
-body.dark .about-box, body.dark .site-footer, body.dark .card, body.dark .header-panel {
-  background-color: var(--surface);
-  background-image: none !important;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-soft);
-}
-
-/* Light Mode Panel */
-body.light .about-box, body.light .site-footer, body.light .card, body.light .header-panel {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), var(--glass-bg));
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-soft);
-  background-image: none !important;
-}
-body.light {
-  /* Text Muted di Light Mode */
-}
-body.light .about-box .text-muted-custom,
-body.light .site-footer .text-muted-custom,
-body.light .card .text-muted-custom {
-  color: rgba(15, 23, 42, 0.72) !important;
-}
-
-/* Fallback untuk browser tanpa backdrop-filter */
+/* Fallback tanpa backdrop-filter */
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-  .about-box, .site-footer, .card, .header-panel {
+  .about-box, .site-footer, .card {
     background: var(--surface);
   }
 }
-/* ---------- Hero Section ---------- */
-.hero {
-  background-image: radial-gradient(600px 300px at 10% 10%, rgba(111, 66, 193, 0.02), transparent 15%), radial-gradient(500px 220px at 90% 80%, rgba(13, 202, 240, 0.01), transparent 12%);
-  background-repeat: no-repeat;
-}
-
-.hero .badge {
-  background: var(--glass-bg);
-  color: var(--text);
-  border: 1px solid var(--glass-border);
-}
-
-.hero h1, .hero .h1, .hero h1 span, .hero .h1 span {
-  color: var(--text) !important;
-}
-
-/* ---------- Buttons ---------- */
-.btn-primary {
-  background-color: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #ffffff !important;
-}
-
-/* Ghost Button (Theme Toggle) */
-.btn-ghost {
-  background: transparent;
-  border: none;
-  color: var(--text);
-  padding: 0.35rem 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 180ms ease;
-  border-radius: 0.5rem;
-}
-
-.btn-ghost i {
-  font-size: 1rem;
-  line-height: 1;
-  color: inherit;
-}
-
-.btn-ghost:focus {
-  outline: 3px solid rgba(99, 102, 241, 0.12);
-  outline-offset: 2px;
-}
-
-/* Ghost Button Light Mode */
-body.light .btn-ghost.ghost--light {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(250, 250, 252, 0.84));
-  color: var(--text);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: var(--card-elevation);
-  backdrop-filter: blur(6px) saturate(110%);
-  -webkit-backdrop-filter: blur(6px) saturate(110%);
-  border-radius: 10px;
-}
-
-body.light .btn-ghost.ghost--light.btn-sm, body.light .btn-group-sm > .btn-ghost.ghost--light.btn {
-  padding: 0.25rem 0.4rem;
-  border-radius: 8px;
-}
-
-/* ---------- Perbaikan Visibilitas Light Mode ---------- */
-body.light {
-  /* Heading & Teks Penting */
-}
-body.light .h2, body.light .h2.text-white,
-body.light .hero .display-4, body.light .hero .display-5, body.light .hero .hero-title,
-body.light .about-box h2, body.light .about-box h3, body.light .about-box .h3,
-body.light .card h5,
-body.light .card .h5,
-body.light .site-footer p, body.light .site-footer .small,
-body.light .text-white {
-  color: var(--text) !important;
-}
-body.light {
-  /* Aksen Warna */
-}
-body.light .hero .display-4 span,
-body.light .about-box h2 .accent,
-body.light .about-box .h2 .accent,
-body.light .card h5 .accent,
-body.light .card .h5 .accent {
-  color: var(--color-primary) !important;
-}
-body.light {
-  /* Text Muted */
-}
-body.light .text-muted-custom {
-  color: rgba(15, 23, 42, 0.72) !important;
-}
-body.light {
-  /* Badge Light */
-}
-body.light .badge.bg-light {
-  background: var(--glass-bg) !important;
-  color: var(--text) !important;
-  border: 1px solid var(--glass-border) !important;
-}
-
-/* ---------- Responsif (Mobile/Tablet) ---------- */
+/* Responsif */
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 0;
@@ -12343,17 +12081,6 @@ body.light .badge.bg-light {
   .nav-logo {
     width: 32px;
     height: 32px;
-  }
-  .btn-cta {
-    min-width: 0;
-    width: 100%;
-    display: block;
-  }
-  .about-box, .panel-surface, .site-footer, .card, .header-panel {
-    padding: 1rem;
-  }
-  .hero-img {
-    min-height: 240px;
   }
   .navbar-nav {
     gap: 0.5rem;
@@ -12378,15 +12105,6 @@ body.light .badge.bg-light {
     padding: 0.5rem 0.75rem;
     font-size: 0.95rem;
   }
-  .btn-cta {
-    width: 100%;
-  }
-  .about-box, .panel-surface, .site-footer, .card, .header-panel {
-    padding: 0.85rem;
-  }
-  .hero-img {
-    min-height: 180px;
-  }
   .badge {
     font-size: 0.72rem;
     padding: 0.35rem 0.6rem;
@@ -12394,9 +12112,100 @@ body.light .badge.bg-light {
   .site-footer {
     padding: 1rem 0;
   }
-  .dropdown-menu {
-    min-width: 160px;
-  }
+}
+:root {
+  --color-primary: #6f42c1;
+  --color-secondary: #0dcaf0;
+  --color-info: #0dcaf0;
+  --color-light: #e7e9ee;
+  --color-dark: #050507;
+  --bg: #050507;
+  --text: #e7e9ee;
+  --muted: rgba(255,255,255,0.65);
+  --surface: rgba(0,0,0,0.12);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-soft: 0 6px 24px rgba(2,6,23,0.06);
+  --bg-image: none;
+}
+
+html.light {
+  --bg: #f7f8fb;
+  --text: #0f1724;
+  --muted: rgba(15, 23, 36, 0.62);
+  --surface: rgba(255, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(15, 23, 42, 0.06);
+  --shadow-soft: 0 12px 36px rgba(10,18,34,0.08);
+  --bg-image:
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,251,253,1) 28%, rgba(244,246,249,1) 100%),
+    radial-gradient(700px 320px at 12% 18%, rgba(111,66,193,0.035), transparent 24%),
+    radial-gradient(520px 260px at 88% 82%, rgba(13,202,240,0.018), transparent 20%);
+  --card-elevation: 0 8px 28px rgba(10, 18, 34, 0.06);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-text: #0b1a28;
+  --nav-link: #0f1724;
+  --nav-link-hover: #ff7a59;
+  --nav-border: rgba(15, 23, 42, 0.06);
+}
+html.light .h2, html.light .h2.text-white,
+html.light .hero .display-4, html.light .hero .display-5, html.light .hero .hero-title,
+html.light .about-box h2, html.light .about-box h3, html.light .about-box .h3,
+html.light .card h5,
+html.light .card .h5,
+html.light .site-footer p, html.light .site-footer .small,
+html.light .text-white {
+  color: var(--text) !important;
+}
+html.light .hero .display-4 span,
+html.light .about-box h2 .accent,
+html.light .about-box .h2 .accent,
+html.light .card h5 .accent,
+html.light .card .h5 .accent {
+  color: var(--color-primary) !important;
+}
+html.light .text-muted-custom {
+  color: rgba(15, 23, 42, 0.72) !important;
+}
+html.light .badge.bg-light {
+  background: var(--glass-bg) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+html.light .about-box .text-muted-custom,
+html.light .site-footer .text-muted-custom,
+html.light .card .text-muted-custom {
+  color: rgba(15, 23, 42, 0.72) !important;
+}
+
+html.dark {
+  --bg: #0b1220;
+  --text: #e7e9ee;
+  --muted: rgba(231,233,238,0.75);
+  --surface: rgba(255,255,255,0.02);
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --shadow-soft: 0 6px 30px rgba(2,6,23,0.6);
+  --bg-image: none;
+}
+html.dark .about-box, html.dark .site-footer, html.dark .card {
+  background-color: var(--surface);
+  background-image: none !important;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 4rem 0 2rem;
+  font-size: 0.9rem;
+}
+.site-footer i {
+  transition: transform 0.2s, color 0.2s;
+}
+.site-footer i:hover {
+  transform: scale(1.2);
+  color: #6f42c1 !important;
 }
 
 /*# sourceMappingURL=Style.css.map */

@@ -1,0 +1,17 @@
+html.dark {
+  --bg: #0b1220;
+  --text: #e7e9ee;
+  --muted: rgba(231,233,238,0.75);
+  --surface: rgba(255,255,255,0.02);
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --shadow-soft: 0 6px 30px rgba(2,6,23,0.6);
+  --bg-image: none;
+
+  .about-box, .site-footer, .card {
+    background-color: var(--surface);
+    background-image: none !important;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+  }
+}

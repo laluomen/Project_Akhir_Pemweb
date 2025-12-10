@@ -1,20 +1,16 @@
-// components/_hero.scss
-
 .hero {
-  padding: 4rem 0;
-  position: relative;
-  
-  h1 span {
-    background: linear-gradient(45deg, $primary, $secondary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  background-image:
+    radial-gradient(600px 300px at 10% 10%, rgba(111,66,193,0.02), transparent 15%),
+    radial-gradient(500px 220px at 90% 80%, rgba(13,202,240,0.01), transparent 12%);
+  background-repeat: no-repeat;
+}
 
-  .hero-img {
-    height: 400px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
+.hero .badge {
+  background: var(--glass-bg);
+  color: var(--text);
+  border: 1px solid var(--glass-border);
+}
+
+.hero h1, .hero h1 span {
+  color: var(--text) !important;
 }

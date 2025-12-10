@@ -1,0 +1,54 @@
+html.light {
+  --bg: #{$light-bg};
+  --text: #{$light-text};
+  --muted: #{$light-muted};
+
+  --surface: #{$light-surface};
+  --glass-bg: #{$light-glass-bg};
+  --glass-border: #{$light-glass-border};
+  --shadow-soft: 0 12px 36px rgba(10,18,34,0.08);
+
+  --bg-image:
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,251,253,1) 28%, rgba(244,246,249,1) 100%),
+    radial-gradient(700px 320px at 12% 18%, rgba(111,66,193,0.035), transparent 24%),
+    radial-gradient(520px 260px at 88% 82%, rgba(13,202,240,0.018), transparent 20%);
+
+  --card-elevation: #{$card-elevation};
+
+  --nav-bg: #{$light-navbar-bg};
+  --nav-text: #{$light-navbar-text};
+  --nav-link: #{$light-navbar-link};
+  --nav-link-hover: #{$light-navbar-hover};
+  --nav-border: #{$light-navbar-border};
+
+  .h2, .h2.text-white,
+  .hero .display-4, .hero .display-5, .hero .hero-title,
+  .about-box h2, .about-box h3,
+  .card h5,
+  .site-footer p, .site-footer .small,
+  .text-white {
+    color: var(--text) !important;
+  }
+
+  .hero .display-4 span,
+  .about-box h2 .accent,
+  .card h5 .accent {
+    color: var(--color-primary) !important;
+  }
+
+  .text-muted-custom {
+    color: rgba(15, 23, 42, 0.72) !important;
+  }
+
+  .badge.bg-light {
+    background: var(--glass-bg) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--glass-border) !important;
+  }
+
+  .about-box .text-muted-custom,
+  .site-footer .text-muted-custom,
+  .card .text-muted-custom {
+    color: rgba(15,23,42,0.72) !important;
+  }
+}

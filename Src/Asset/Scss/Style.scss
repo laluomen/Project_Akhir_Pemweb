@@ -19,7 +19,9 @@
 @import "components/buttons";
 @import "components/cards";
 @import "components/forms";
-
+@import "utils/utilities";
+@import "themes/_root-tokens";
+@import "themes/_Light";
+@import "themes/_dark";
 // 5. Import Layout
-@import "layout/footer";
-@import "layout/_theme";
+@import "components/footer";
