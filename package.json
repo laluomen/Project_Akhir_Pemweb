@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build-css": "sass Src/Asset/Scss/Style.scss dist/assets/css/Style.css",
-    "watch-css": "sass --watch Src/Asset/Scss/Style.scss:dist/assets/css/Style.css",
-    "copy-html": "cpx \"Src/index.html\" dist",
-    "copy-js": "cpx \"Src/Asset/Js/**\" dist/assets/js",
-    "build": "npm run build-css && npm run copy-html && npm run copy-js",
+    "build-css": "sass src/assets/scss/styles.scss dist/assets/css/styles.css",
+    "watch-css": "sass --watch src/assets/scss/styles.scss:dist/assets/css/styles.css",
+    "copy-html": "cpx \"src/*.html\" dist",
+    "copy-js": "cpx \"src/assets/js/**\" dist/assets/js",
+    "copy-assets": "cpx \"src/assets/images/**\" dist/assets/images", 
+    "build": "npm run build-css && npm run copy-html && npm run copy-js && npm run copy-assets",
     "format": "prettier --write ."
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.8"
-  },
+  "dependencies": {  },
   "devDependencies": {
-    "cpx": "^1.5.0",
+    "cpx2": "^8.0.0",
     "prettier": "^3.7.4",
-    "sass": "^1.94.2"
+    "postcss": "^8.5.6",
+    "postcss-cli": "11.0.1",
+    "autoprefixer": "10.4.22",
+    "sass": "^1.95.1"
   }
 }

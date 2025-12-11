@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kontak — Sestro Studio</title>
+
+    <link rel="icon" type="image/x-icon" href="./assets/images/logo.ico" />
+
+    <!-- Anti Theme Flicker (harus paling awal sebelum CSS) -->
+    <script src="./assets/js/anti-flicker.js"></script>
+
+    <!-- CSS & Fonts (samakan dengan Project.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img
+            id="siteLogo"
+            src="./assets/images/logo.png"
+            class="nav-logo"
+            alt="Logo"
+            data-src-dark="./assets/images/logo.png"
+            data-src-light="./assets/images/Sesto-dev.png"
+          />
+          <span class="fw-bold">Sestro Studio</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto gap-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Project.html">Proyek</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Kontak</a>
+            </li>
+          </ul>
+
+          <!-- Theme Toggle -->
+          <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+            <button
+              id="themeToggle"
+              class="btn btn-ghost btn-sm"
+              aria-pressed="false"
+              aria-label="Toggle theme"
+            >
+              <i id="themeIcon" class="bi bi-moon-fill" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="py-5 text-center hero">
+      <div class="container">
+        <span
+          class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill shadow-sm"
+        >
+          Get in Touch
+        </span>
+        <h1 class="display-3 fw-bold hero-title">
+          Hubungi <span class="text-gradient">Kami</span>
+        </h1>
+        <p class="text-muted-custom lead">
+          Kami siap mendengar ide hebat Anda.
+        </p>
+      </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-4 mb-5">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Contact Info -->
+          <div class="col-lg-5">
+            <div class="about-box h-100">
+              <h3 class="text-white mb-4">Informasi Kontak</h3>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="bi bi-geo-alt-fill text-primary fs-4 me-3"></i>
+                <div>
+                  <h5 class="text-white mb-1">Alamat</h5>
+                  <p class="text-muted-custom small">
+                    Indaraya Indah Jalan Nomor 29 Simpang Lurus
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="bi bi-envelope-fill text-primary fs-4 me-3"></i>
+                <div>
+                  <h5 class="text-white mb-1">Email</h5>
+                  <p class="text-muted-custom small">hello@sestrostudio.com</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start mb-4">
+                <i class="bi bi-telephone-fill text-primary fs-4 me-3"></i>
+                <div>
+                  <h5 class="text-white mb-1">Telepon</h5>
+                  <p class="text-muted-custom small">+62 812 2907 0909</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="col-lg-7">
+            <form class="about-box" id="contactForm">
+              <div class="mb-3">
+                <label for="name" class="form-label text-white small">Nama Lengkap</label>
+                <input
+                  type="text"
+                  class="form-control glass-input"
+                  id="name"
+                  placeholder="Nama Anda"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label text-white small">Alamat Email</label>
+                <input
+                  type="email"
+                  class="form-control glass-input"
+                  id="email"
+                  placeholder="email@contoh.com"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="subject" class="form-label text-white small">Subjek</label>
+                <input
+                  type="text"
+                  class="form-control glass-input"
+                  id="subject"
+                  placeholder="Perihal Projek"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="message" class="form-label text-white small">Pesan</label>
+                <textarea
+                  class="form-control glass-input"
+                  id="message"
+                  rows="5"
+                  placeholder="Ceritakan detail kebutuhan Anda..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg rounded-pill px-5 w-100 shadow-lg"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer text-center mt-auto">
+      <div class="container">
+        <div class="mb-3">
+          <a href="#" class="text-muted-custom me-3 fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-muted-custom me-3 fs-5"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="text-muted-custom me-3 fs-5"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="text-muted-custom fs-5"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="text-muted-custom small mb-0">&copy; 2025 Sestro Studio.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (WAJIB untuk navbar toggle Bootstrap) -->
+    <script type="module" src="./assets/js/main.js"></script>
+
+    <!-- Theme & Logo Scripts (SAMA dengan Project.html) -->
+    <script src="./assets/js/theme-toggle.js" defer></script>
+    <script src="./assets/js/Logo-theme.js" defer></script>
+    <script src="./assets/js/validation.js" defer></script>
+  </body>
+</html>
